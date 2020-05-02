@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+
+  <ItemGroup>
+    <Content Remove="mono_crash.1cb2c70435.0.json" />
+    <Content Remove="wwwroot\wp-content\uploads\2018\01\ltc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\wp-content\uploads\gallery\" />
+    <Folder Include="wwwroot\2018\Svg\" />
+  </ItemGroup>
+</Project>

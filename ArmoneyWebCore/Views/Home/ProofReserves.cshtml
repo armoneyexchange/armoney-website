@@ -1,0 +1,156 @@
+﻿@{
+    ViewData["Title"] = "Proof of Reserves";
+}
+<!-- HEADER TITLE BREADCRUBS SECTION -->
+<div class="header-title-breadcrumb relative">
+    <div class="header-title-breadcrumb-overlay text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-6 col-xs-6 text-left">
+                    <h1>Proof of Reserves</h1>
+                </div>
+                <div class="col-md-5 col-sm-6 col-xs-6">
+                    <ol class="breadcrumb text-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="active">Proof of Reserves</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<!-- Page content -->
+<div id="primary" class="no-padding content-area no-sidebar">
+    <div class="container">
+        <div class="row">
+            <main id="main" class="col-md-12 site-main main-content">
+                <article id="post-15475" class="post high-padding post-15475 type-post status-publish format-standard has-post-thumbnail hentry category-crypto">
+                    <div class="container">
+                        <div class="row">
+                            <!-- POST CONTENT -->
+                            <div class="col-md-12 col-sm-12 status-panel-sidebar main-content">
+                                <!-- CONTENT -->
+                                <div class="article-content">
+                                    <h3>
+                                        <strong>Introduction</strong>
+                                    </h3>
+                                    <div class="body">
+                                        <p>This document provides background and guidance regarding ARMoney’s audit process.</p>
+
+                                        <p>ARMoney holds full reserves, and we employ an independent, cryptographically-verified audit in order to prove to third parties, including our customers, that customer funds are properly held. Transparency and independently verified audits are critical to ensure that companies hold full reserves of customer funds. A public proof-of-reserve scheme is technically possible to implement. However, there are important externalities, user privacy among them, that must be carefully considered in the specific implementation of a public proof-of-reserve scheme. We believe that exchanges and wallets must build trust through accountability and that we bear a responsibility to address the community's desire for transparency.</p>
+
+                                        <p>Over the past several weeks, ARMoney has successfully developed and completed an industry-leading, independent, cryptographically-verified audit. We are proud to submit this overview of our process to the global digital currency community. We believe that the Bitcoin industry is capable of providing a level of assurance and accountability that surpasses the traditional financial services industry, and we aim to lead the charge toward optimal transparency.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <h3>
+                                        <strong>Current Landscape</strong>
+                                    </h3>
+                                    <div class="body">
+                                        <p>The impetus for this initiative is Greg Maxwell's proposal for exchanges/wallets to prove their Bitcoin reserves. [<a href="#references">1</a>]</p>
+
+                                        <p>To date, audits produced by the Bitcoin industry have been opaque, superficial and without publicly viewable and independently verifiable cryptographic verification. ARMoney seeks to provide a proof of concept and set industry standards of greater transparency and accountability from the digital currency ecosystem that others can follow and improve upon.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <h3>
+                                        <strong>Quality of Process</strong>
+                                    </h3>
+                                    <div class="body">
+                                        <p>Maxwell’s proposal would have required bitcoin companies to reveal all of their balance-containing addresses. This method would result in the public knowledge of exchanges’ or wallet providers’ bitcoin wallets and total holdings, information that is commercially sensitive and presents potential security risks to companies and users. Worse, it would result in an impermissible breach of user privacy, in which the history and trajectory of the individual holdings and financial activity could be tracked by third parties without cause or due process.</p>
+
+                                        <p>Our process does not require us to disclose our total balance, addresses, or keys to the public. By combining and leveraging the strengths of both a trusted auditor and publicly-verifiable cryptography, the ARMoney audit represents the ideal balance between privacy and transparency.</p>
+
+                                        <p>Since Bitcoin is the dominant cryptocurrency, our initial audit will cover only Bitcoin reserves. However, audits for other assets will be considered for future development.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <h3>
+                                        <strong>Process Overview</strong>
+                                    </h3>
+                                    <div class="body">
+                                        <ul>
+                                            <li>
+                                                <h3>Phase 1 - Auditor checks the funds of ARMoney’s entire wallet</h3>
+
+                                                <p>ARMoney gives the auditor all of our public addresses and signs them. The block hash at the time of signature is part of the signed message and can be used as a timestamp for when the signature was made. The signatures of those public addresses will then be verified, and the auditor will use the bitcoin blockchain to extract the total amount available at those addresses at a certain point in time.</p>
+
+                                                  </li>
+                                            <li>
+                                                <h3>Phase 2 - Auditor checks that the balances of ARMoney users match with the funds of the ARMoney wallet</h3>
+
+                                                <p>ARMoney gives the auditor the BTC balances of each one of our users and generates a Merkle tree. The auditor will publish the root node hash for all to see, and affirm, if true, that the total holdings represented by the root hash closely approximates the value that he sees in our wallet from the blockchain. This flow also ensures that ARMoney is not hiding anything in any of the nodes that lead up to the root node.</p>
+
+                                                <p>For this phase of the audit, the auditor will have access to the source code for the tree-generating program and the individual account balances data file. ARMoney released C++ code for this phase under the MIT License:&nbsp;<a href="" target="_blank" rel="noopener"> Github Link</a></p>
+                                            </li>
+                                            <li>
+                                                <h3>Phase 3 - Users independently verify that their account balances were included in the data used by the auditor</h3>
+
+                                                <p>ARMoney gives users the amount that we reported to the auditor, as well as the nodes (and adjacent nodes) from their account to the root (which matches the one published by the auditor). We also disclose the hashing method used to generate the hash for their node, so that they can verify that the node does represent the amount that we claim it does.</p>
+
+                                                <p>This will enable users to independently check for themselves that their account was included in the data verified by the auditor.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <h3>
+                                        <strong>Shortcomings</strong>
+                                    </h3>
+                                    <div class="body">
+                                        <p>In this section, we describe some of this audit’s shortcoming. Note that this is obviously not an exhaustive list of weaknesses. However, because we value transparency to our users, we are providing informal background on specific shortcomings we have thus far identified in the auditing process.</p>
+
+                                        <p>Unlike physical assets, information need not be removed from one’s possession to be taken into possession by another. Thus, ARMoney or another company employing this auditing method cannot prove that private keys have not been duplicated by an attacker. We also cannot prove that we have exclusive possession of the audited funds. We can only prove that at the time of the audit, we were one of the possessors of the private keys.</p>
+
+                                        <p>The full audit probably cannot be performed on-demand, without prior notice. Given the required information, structure of the audit, and industry standard cold storage security practices at this time, a surprise same-day audit is not feasible. We envision a potential ‘light’ audit building upon a prior full audit, relying on previously-generated signatures, which may be performed more frequently.</p>
+
+                                        <p>The auditor must be trusted and competent. The community must believe that the auditor values her reputation and is technically capable. There are several opportunities in this audit process where a less technical or less paranoid auditor could be duped by the auditee. There are also opportunities for the auditor to intentionally or inadvertently compromise confidential company and customer information. Both auditor and auditee must consider who provides the computer, the audit space, the blockchain, the Internet connection, the router, DNS, etc. If the goal is to hide a billion-dollar fraud, one can imagine going to great lengths to compromise the audit.</p>
+
+                                        <p>The audit is not continuously renewed in real time. It is possible that keys were lost or funds were stolen since the last audit time. The full audit renews the affirmation that keys have not been lost, though it creates greater threat exposure because it is necessary to utilize the cold storage keys to conduct the audit.</p>
+
+                                        <p>The auditee may be able to borrow funds temporarily or share keys with the true funds owner in order to pass an audit.</p>
+
+                                        <p>The auditor may collude with or succumb to threats from the auditee.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <h3>
+                                        <strong>Ongoing Basis</strong>
+                                    </h3>
+                                    <div class="body">
+                                        <p>We intend to perform regular audits on an ongoing basis. Since there is no universally trusted auditor, we may use a different auditor, or multiple auditors each time. This satisfies those who may doubt the credentials of a particular individual auditor.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                    <h3>
+                                        <strong>Future Changes and Improvements</strong>
+                                    </h3>
+                                    <div class="body">
+                                        <p>We hope to receive feedback from the community that will help us and others to improve this process for future audits. As members of this community, we also hope to work with industry organizations such as DATA (<a href="/redirect?url=http%3A%2F%2Fwww.datauthority.org" target="_blank" rel="noopener">www.datauthority.org</a>) to help develop basic standards, scalable tools and a comprehensive manual for others in the industry to perform similar audits.</p>
+
+                                       </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- #post-## -->
+            </main>
+        </div>
+    </div>
+</div>
+<!-- BACK TO TOP BUTTON -->
+<a class="back-to-top modeltheme-is-visible modeltheme-fade-out" href="#0">
+    <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+</a>
+
+

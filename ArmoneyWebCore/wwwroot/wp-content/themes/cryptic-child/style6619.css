@@ -1,0 +1,190 @@
+/*
+
+Theme Name: Cryptic Child
+
+Theme URI: http://modeltheme.com/mt_bitcurrency/
+
+Template: cryptic
+Author: ModelTheme
+Author URI: http://modeltheme.com/
+Description: Cryptic - Cryptocurrency WordPress Theme
+Version: 1.0
+Text Domain: cryptic
+Tags: custom-header, custom-menu, featured-images, post-formats, sticky-post
+*/
+
+@import url("../cryptic/style.css");
+
+/* =Theme customization starts here
+------------------------------------------------------- */
+#navbar .mega3columns.right-mm .cf-mega-menu.sub-menu {
+    right: 0;
+    left: auto;
+}
+.alert.cryptic-demo-login {
+    padding: 13px 15px !important;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+.ccpw_icon img {
+    margin-left: 0px !important;
+    max-width: 20px;
+    height: auto !important;
+}
+body .ccpw_table tr,
+body .ccpw_table th,
+body .ccpw_table td {
+    text-align: left !important;
+}
+.alert.cryptic-demo-login .close {
+    left: -8px;
+    top: 6px;
+}
+body .ccpw_icon img {
+    margin-top: 5px !important;
+}
+#navbar .menu > .menu-item > a {
+    padding: 29px 13px !important;
+}
+@media only screen and (max-width: 767px) {
+    #navbar .menu > .menu-item > a {
+        padding: 0px 15px !important;
+    }
+}
+.special_progress .vc_label {
+    padding: 3px 8px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+}
+
+
+@media only screen and (max-width: 767px) {
+	.column-centered-mobile .vc_column-inner {
+	    margin: 15px 0 !important;
+	}
+	.vcw.vcw-full-card{
+		width: 100% !important;
+	}
+	#btc_calc{
+		margin-bottom: 30px !important;
+	}
+	.exchange_calculator #btc_calc {
+	    text-align: center;
+	}
+}
+
+.blog-posts-shortcode .post-excerpt {
+    text-align: left;
+}
+.footer-div-parent {
+    margin-bottom: 30px;
+}
+
+
+.demo-button a{
+    padding: 30px 0 !important;
+    border: 0 !important;
+}
+
+.demo-button  a strong{
+    padding-bottom: 10px;
+    display: block;
+    font-size: 20px;
+}
+.demo-button a {
+    background-image: none !important;
+    position: relative;
+    overflow: hidden;
+}
+#demos .vc_col-sm-3 .wpb_wrapper:hover .demo-button a,
+.demo-button a:hover {
+    background: #252525 !important;
+    color: #fff !important;
+}
+#demos .vc_col-sm-3 {
+    transition: all 250ms ease;
+    cursor: pointer;
+    transform: scale(.99);
+}
+#demos .vc_col-sm-3:hover {
+    transform: scale(1);
+}
+.demo-button {
+    margin-top: -1px;
+}
+#demos .vc_col-sm-3 .wpb_wrapper{
+    -webkit-box-shadow: 0 10px 35px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 10px 35px rgba(0,0,0,.1);
+    box-shadow: 0 10px 35px rgba(0,0,0,.1);
+}
+#demos .vc_inner .vc_col-sm-3 a::before {
+    position: absolute;
+    font-family: fontawesome;
+    opacity: 0.2;
+    font-size: 100px;
+    opacity: 0.03;
+    top: 20px;
+    left: 10px;
+    transform: rotate(-15deg);
+}
+#demos .vc_inner .vc_col-sm-3:nth-child(1) a::before {
+    content: "\f15a";
+}
+#demos .vc_inner .vc_col-sm-3:nth-child(2) a::before {
+    content: "\f155";
+}
+#demos .vc_inner .vc_col-sm-3:nth-child(3) a::before {
+    content: "\f153";
+}
+#demos .vc_inner .vc_col-sm-3:nth-child(4) a::before {
+    content: "\f154";
+}
+
+#demos .popular-label label {
+    color: #fff;
+    padding: 6px 12px;
+    position: absolute;
+    background: #268BD2;
+}
+#demos .new-label label {
+    color: #fff;
+    padding: 6px 12px;
+    position: absolute;
+    background: #D33682;
+}
+body input.wpcf7-form-control.wpcf7-submit.butonIco {
+    font-size: 13px !important;
+    padding: 15px 35px !important;
+    width: 192px !important;
+}
+body small.vc_label {
+    color: #252525 !important;
+}
+.progress_dark .vc_label {
+    color: #fff !important;
+}
+
+.tickercontainer {
+    margin: 0 !important;
+}
+.ccpw_icon img {
+  margin-top: -4px !important;
+}
+.page-template-landing-page-template .title-subtile-holder {
+    visibility: visible;
+    opacity: 1;
+}
+.page-template-landing-page-template .title-subtile-holder h1 {
+    visibility: visible;
+    opacity: 1;
+}
+.page-template-landing-page-template .title-subtile-holder div {
+    visibility: visible;
+    opacity: 1;
+}
+#demos img.lazy {
+     display: block !important; 
+}
+.btn-sticky-left {
+    z-index: 2;
+}
