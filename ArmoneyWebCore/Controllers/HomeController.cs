@@ -152,6 +152,11 @@ namespace ArmoneyWebCore.Controllers
         {
             return View();
         }
+        [Route("referral")]
+        public IActionResult Referral()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
