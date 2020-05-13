@@ -1,10 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Fees";
 }
+@section Head{
+
+
+
+}
 <style>
+    .nav-pills > li > a {
+        color: black !important;
+    }
 
     .table-striped > tbody > tr:nth-child(odd), .table-hover > tbody > tr:hover {
-        background-color: #000000;
+        background-color: #9e9e9e;
         color: white;
     }
 
@@ -49,13 +57,22 @@
         border-radius: 1px;
         font-weight: bold;
     }
-    .nav-pills{
-        margin-bottom:15px;
+
+    .nav-pills {
+        margin-bottom: 15px;
     }
+
         .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-            color: #fff;
+            color: #fff !important;
             background-color: #baa049;
         }
+    .single article .article-content p, p, .post-excerpt {
+        font-family: Montserrat;
+        line-height: 25px;
+        color: #a7a7a7;
+        font-size: 15px;
+        text-align: justify;
+    }
 </style>
 
 <!-- HEADER TITLE BREADCRUBS SECTION -->
@@ -201,7 +218,6 @@
 
 
 <script type='text/javascript' src='../wp-includes/js/signalr.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>var Token = "p4qB6_DQaVhovJVJZforG5GPnZSsuyhEs1-Zy8s8HGMLxkTPgY7EXRb9jcX-OXJ-NvNbIxAqlWfgs8oCT4XdFtOuR_9AcDz38quC-AdB_D5ZqgFOvPfEEnZLYUyfVpZmCssBOXmZl1NU_S6e9gW0H-b3hghtTEb9CVal8ttGEr4bRZTngACYmOXNK9uYJhXyMjszCNyZCNQNiHh5c416-kD1qKn5PW11JF6-P1EX_9dcDT8aQ6wVa3bbw3kzgHlWftFm0F1LPhreoNR2qTJFOhevPZ0OVIdJAfh9GZYB7I4";
 
     //$("#market").val("BTC");
@@ -220,7 +236,7 @@
 
     SubscribeToMarket("BTC", "ETH");
     // });
-   
+
     function CheckCors() {
         let URL = $("#URL").val();
         $.ajax({
@@ -305,7 +321,7 @@
 
         connection.on('pushDataAllMarket', function (data) {
             //console.log('\n-------------------------   Get All Market Data    ---------------------------');
-             //console.info("All Market", data);
+            //console.info("All Market", data);
             $(document).ready(function () {
 
                 $("#exchangefee tbody").find("tr").remove();
@@ -400,24 +416,22 @@
 
         }
     }</script>
-<script>
-    $(document).ready(function () {
-
-    $.get("https://bff.armoney.in/api/CurrencySettings", function (data) {
-        $("#depositwithdrawfee tbody").find("tr").remove();
-        $.each(data.data, function (index, item) {
-            var line = "<tr>  <td> <img src='../wp-content/icons/" + item.shortName + ".png' />   " + item.shortName + " ( " + item.fullName + " )</td> <td> Free </td> <td>" + item.withdrawalServiceCharge + " %</td> <td>" + item.confirmationCount + " </td> <td>" + item.minWithdrawalLimit + "  " + item.shortName + "</td> <td>" + item.maxWithdrawalLimit + "  " + item.shortName + "</td> </tr> ";
-
-            $("#depositwithdrawfee tbody").append(line);
-        });
-    });
-
-    });
-</script>
 <script>$(document).ready(function () {
 
-    $.get("https://bff.armoney.in/api/get-volume-discount-tiers", function (data) {
-        $("#tradingdiscount tbody").find("tr").remove();
+        $.get("https://bff.armoney.in/api/CurrencySettings", function (data) {
+            $("#depositwithdrawfee tbody").find("tr").remove();
+            $.each(data.data, function (index, item) {
+                var line = "<tr>  <td> <img src='../wp-content/icons/" + item.shortName + ".png' />   " + item.shortName + " ( " + item.fullName + " )</td> <td> Free </td> <td>" + item.withdrawalServiceCharge + " %</td> <td>" + item.confirmationCount + " </td> <td>" + item.minWithdrawalLimit + "  " + item.shortName + "</td> <td>" + item.maxWithdrawalLimit + "  " + item.shortName + "</td> </tr> ";
+
+                $("#depositwithdrawfee tbody").append(line);
+            });
+        });
+
+    });</script>
+<script>$(document).ready(function () {
+
+        $.get("https://bff.armoney.in/api/get-volume-discount-tiers", function (data) {
+            $("#tradingdiscount tbody").find("tr").remove();
             $.each(data.data, function (index, item) {
 
                 var line = "<tr>  <td> <img src='../wp-content/icons/" + item.currency + ".png' />   " + item.currency + "</td> <td>" + item.limit + "</td> <td>" + item.discount + "% </td> </tr> ";

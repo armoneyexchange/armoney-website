@@ -1,24 +1,34 @@
 ﻿@{
     ViewData["Title"] = "Referral";
 }
-    <style>
+@section Head{
+
+
+
+}
+<style>
+
 
     .vc_custom_1518449769790 {
         margin-bottom: 0px !important;
         padding-top: 90px !important;
         padding-bottom: 90px !important;
     }
+
     .blog-posts-shortcode .title-n-excerpt {
         padding: 20px;
         height: 200px;
     }
+
     .ct-widget__body {
-        max-height:none !important;
+        max-height: none !important;
     }
-  .ct-widget_size_md {
+
+    .ct-widget_size_md {
         min-width: 768px;
         max-width: 100% !important;
     }
+
     .partnerx-hero-bullets {
         display: -webkit-flex;
         display: flex;
@@ -26,6 +36,7 @@
         justify-content: center;
         z-index: 3;
     }
+
     .partnerx-hero-bullets-list {
         display: -webkit-flex;
         display: flex;
@@ -35,6 +46,7 @@
         flex-wrap: wrap;
         margin: 0 auto;
     }
+
     .partnerx-hero-bullets-list-item {
         list-style-type: none;
         display: -webkit-flex;
@@ -47,6 +59,7 @@
         -webkit-flex-basis: 25%;
         flex-basis: 25%;
     }
+
     .partnerx-hero-bullets-list-item-text {
         padding-top: 25px;
         text-align: center;
@@ -55,76 +68,83 @@
         line-height: 1.2em;
         color: #000;
     }
-        @@media screen and (min-width: 768px) {
-            .partnerx-hiw-slider-item-content {
-                margin: 25px auto;
-            }
-        }
-.partnerx-hiw-slider-item-content {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-shrink: 0;
-    flex-shrink: 0;
-    position: relative;
-    padding: 40px 25px;
-    background-color: #fff;
-    width: calc(100% - 25px);
-    min-height: 300px;
-    box-shadow: 0 0 15px 0 rgba(0,0,0,.12);
-    border-radius: 4px;
-    margin: 25px 0;
-    overflow: hidden;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-}
-        .partnerx-hiw-slider-item-content-ig {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-shrink: 0;
-            flex-shrink: 0;
-            -webkit-justify-content: center;
-            justify-content: center;
-        }
 
-        .partnerx-hiw-slider-item-content-ig {
-            height: 50px;
-            margin-bottom: 20px;
+    @@media screen and (min-width: 768px) {
+        .partnerx-hiw-slider-item-content {
+            margin: 25px auto;
         }
-        .partnerx-hiw-slider-item-content-header {
-            margin: 10px auto 25px;
-            -webkit-align-items: center;
-            align-items: center;
-        }
+    }
 
-        .partnerx-hiw-slider-item-content-header, .partnerx-hiw-slider-item-content-ig {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-shrink: 0;
-            flex-shrink: 0;
-            -webkit-justify-content: center;
-            justify-content: center;
-        }
-        .partnerx-hiw-slider-item-content-description {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-shrink: 0;
-            flex-shrink: 0;
-            -webkit-justify-content: center;
-            justify-content: center;
-        }
-        .partnerx-hiw-slider-item-content-header-text {
-            text-align: center;
-            font-weight: 700;
-            font-size: 20px;
-            color: #1c1b21;
-        }
-        .partnerx-hiw-slider-item-content-description-text {
-            color: #929292;
-            line-height: 1.43em;
-            text-align: center;
-            font-size: 14px;
-        }
-    </style>
+    .partnerx-hiw-slider-item-content {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-shrink: 0;
+        flex-shrink: 0;
+        position: relative;
+        padding: 40px 25px;
+        background-color: #fff;
+        width: calc(100% - 25px);
+        min-height: 300px;
+        box-shadow: 0 0 15px 0 rgba(0,0,0,.12);
+        border-radius: 4px;
+        margin: 25px 0;
+        overflow: hidden;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .partnerx-hiw-slider-item-content-ig {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-shrink: 0;
+        flex-shrink: 0;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
+    .partnerx-hiw-slider-item-content-ig {
+        height: 50px;
+        margin-bottom: 20px;
+    }
+
+    .partnerx-hiw-slider-item-content-header {
+        margin: 10px auto 25px;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    .partnerx-hiw-slider-item-content-header, .partnerx-hiw-slider-item-content-ig {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-shrink: 0;
+        flex-shrink: 0;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
+    .partnerx-hiw-slider-item-content-description {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-shrink: 0;
+        flex-shrink: 0;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
+    .partnerx-hiw-slider-item-content-header-text {
+        text-align: center;
+        font-weight: 700;
+        font-size: 20px;
+        color: #1c1b21;
+    }
+
+    .partnerx-hiw-slider-item-content-description-text {
+        color: #929292;
+        line-height: 1.43em;
+        text-align: justify;
+        font-size: 14px;
+    }
+</style>
 <!-- HEADER TITLE BREADCRUBS SECTION -->
 <div class="header-title-breadcrumb relative">
     <div class="header-title-breadcrumb-overlay text-center">

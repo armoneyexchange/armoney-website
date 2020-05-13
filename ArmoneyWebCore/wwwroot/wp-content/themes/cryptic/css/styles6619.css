@@ -683,13 +683,13 @@ textarea.form-control {
     width: 40px;
 }
 .back-to-top {
-    bottom: 50px;
+    bottom: 45px;
     display: block;
     height: 40px;
     margin: 5px auto;
     overflow: hidden;
     position: fixed;
-    right: 30px;
+    right: 85px;
     transition: all 0.3s ease 0s;
     visibility: hidden;
     white-space: nowrap;

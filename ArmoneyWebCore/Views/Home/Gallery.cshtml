@@ -1,17 +1,24 @@
 ﻿@{
     ViewData["Title"] = "Gallery";
 }
+@section Head{
 
+
+
+}
 <style>
+
 
 
     .cd-tab-filter li:first-child {
         display: inline-block;
     }
+
     .iconfilter-shortcode .cd-gallery img {
         max-width: max-content;
         margin-top: 0;
     }
+
     .members_img_holder .member01-content {
         background: transparent !important;
         bottom: 0px;
@@ -22,6 +29,7 @@
         -webkit-transition: all 250ms ease-in-out;
         width: 100%;
     }
+
     .members_img_holder .member01_name {
         font-size: 16px;
         font-weight: 800;
@@ -33,10 +41,12 @@
         text-align: left;
         height: 50px;
     }
+
     .cd-gallery iframe {
         display: block;
         width: 100%;
     }
+
     @@media only screen and (min-width: 1170px) {
         .cd-gallery li {
             width: 32.33%;
@@ -77,9 +87,10 @@
         justify-content: space-between;
         align-items: center;
     }
+
     @@media only screen and (max-width: 750px) {
         .members_img_holder .member01_name {
-            height:75px !important
+            height: 75px !important
         }
     }
 </style>
