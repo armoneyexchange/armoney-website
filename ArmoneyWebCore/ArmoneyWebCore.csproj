@@ -13,5 +13,6 @@
   <ItemGroup>
     <Folder Include="wwwroot\wp-content\uploads\gallery\" />
     <Folder Include="wwwroot\2018\Svg\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 </Project>
