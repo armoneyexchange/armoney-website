@@ -434,7 +434,7 @@
             $("#tradingdiscount tbody").find("tr").remove();
             $.each(data.data, function (index, item) {
 
-                var line = "<tr>  <td> <img src='../wp-content/icons/" + item.currency + ".png' />   " + item.currency + "</td> <td>" + item.limit + "</td> <td>" + item.discount + "% </td> </tr> ";
+                var line = "<tr>  <td> <img src='../wp-content/icons/" + item.currency + ".png' />   " + item.currency + "</td> <td>" + item.limit.toFixed(2).replace(/(\d)(?=(\d{2})+\d\.)/g, '$1,') + "</td> <td>" + item.discount + "% </td> </tr> ";
 
                 $("#tradingdiscount tbody").append(line);
             });

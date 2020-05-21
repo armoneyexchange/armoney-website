@@ -1024,7 +1024,7 @@
                     if (!key.includes('INR_'))
                         return;
 
-                    var line = "<tr>  <td> <img src='../wp-content/icons/" + key.split('_')[1] + ".png' />   " + key.split('_')[1] + " / " + key.split('_')[0] + " </td> <td>" + value.Last + " " + key.split('_')[0] + "</td> <td>" + value.PercentChange + " %</td> <td>" + value.QuoteVolume + "  " + key.split('_')[1] + "</td> <td>" + value.BaseVolume + "  " + key.split('_')[0] + "</td> <td>" + value.Low_24hr + "  " + key.split('_')[0] + "</td> <td>" + value.High_24hr + "  " + key.split('_')[0] + "</td> </tr> ";
+                    var line = "<tr>  <td> <img src='../wp-content/icons/" + key.split('_')[1] + ".png' />   " + key.split('_')[1] + " / " + key.split('_')[0] + " </td> <td>" + value.Last.toFixed(2).replace(/(\d)(?=(\d{2})+\d\.)/g, '$1,') + " " + key.split('_')[0] + "</td> <td>" + value.PercentChange + " %</td> <td>" + value.QuoteVolume.toLocaleString() + "  " + key.split('_')[1] + "</td> <td>" + value.BaseVolume.toFixed(2).replace(/(\d)(?=(\d{2})+\d\.)/g, '$1,') + "  " + key.split('_')[0] + "</td> <td>" + value.Low_24hr.toFixed(2).replace(/(\d)(?=(\d{2})+\d\.)/g, '$1,') + "  " + key.split('_')[0] + "</td> <td>" + value.High_24hr.toFixed(2).replace(/(\d)(?=(\d{2})+\d\.)/g, '$1,') + "  " + key.split('_')[0] + "</td> </tr> ";
                     $("#cryptotable tbody").append(line);
 
                 });
