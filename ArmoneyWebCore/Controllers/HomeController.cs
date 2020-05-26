@@ -117,8 +117,8 @@ namespace ArmoneyWebCore.Controllers
         {
             return View();
         }
-        [Route("competition")]
-        public IActionResult Competition()
+        [Route("media-assets")]
+        public IActionResult Media()
         {
             return View();
         }
