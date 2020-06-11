@@ -118,13 +118,12 @@
                                             </p>
                                         </div>
                                         <div class="wpb_wrapper">
-                                            <div class="title">About Exchange</div>
+                                            <div class="title">About Exchange Fees</div>
                                             <p>
-                                                When you place an order at the market price that gets filled immediately, you are considered a taker and will pay a fee of 0.20%.
-                                                <br />
-                                                When you place an order, which is not immediately matched by an existing order, that order is placed on the order book. If another customer places an order that matches yours, you are considered the maker and will pay a fee of 0.20%.
-                                                <br />
-                                                When you place an order that gets partially matched immediately, you pay a taker fee for that portion.<br />The remainder of the order is placed on the order book and, when matched, is considered a maker order.
+                                                When you place an order at the market price that gets filled immediately, you are considered a taker and will pay a fee of 0.25%.
+                                               <br /> <br />When you place an order, which is not immediately matched by an existing order, that order is placed on the order book. If another customer places an order that matches yours, you are considered the maker and will pay a fee between 0.30% to .40%.
+                                               <br /> <br />When you place an order that gets partially matched immediately, you pay a taker fee for that portion.
+                                               <br /> <br />The remainder of the order is placed on the order book and, when matched, is considered a maker order.
                                             </p>
                                         </div>
                                         <div class="vc_empty_space" style="height: 10px">
@@ -467,8 +466,8 @@
             $("#tradingrul tbody").find("tr").remove();
         $.each(data.data.trade_setting, function (index, item) {
 
-            var line = "<tr>  <td> <img src='../wp-content/icons/" + item.coinName + ".png' />   " + item.coinName + " / " + item.marketName + " </td> <td>" + item.minTickSize.toFixed(8) + " " + item.marketName + "</td> <td>" + item.minOrderValue.toFixed(8) + " " + item.marketName + " </td> <td>" + item.minTradeAmount.toFixed(8) + " " + item.coinName + " </td> </tr> ";
-
+            var line = "<tr>  <td> <img src='../wp-content/icons/" + item.coinName + ".png' />   " + item.coinName + " / " + item.marketName + " </td> <td>" + item.minTickSize.toString() + " " + item.marketName + "</td> <td>" + item.minOrderValue.toFixed(8) + " " + item.marketName + " </td> <td>" + item.minTradeAmount.toFixed(8) + " " + item.coinName + " </td> </tr> ";
+            console.log('item.minTickSize.toString()', item.minTickSize.toFixed(33).toString()).trim;
                 $("#tradingrul tbody").append(line);
             });
         });

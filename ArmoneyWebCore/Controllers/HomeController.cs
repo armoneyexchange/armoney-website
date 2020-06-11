@@ -162,6 +162,21 @@ namespace ArmoneyWebCore.Controllers
         {
             return View();
         }
+        [Route("testimonials")]
+        public IActionResult Testimonials()
+        {
+            return View();
+        }
+        [Route("bonus")]
+        public IActionResult Bonus()
+        {
+            return View();
+        }
+        [Route("bima")]
+        public IActionResult Bima()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
