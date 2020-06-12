@@ -7,6 +7,7 @@
 
 }
 <style>
+
     .nav-pills > li > a {
         color: black !important;
     }
@@ -67,7 +68,8 @@
             background-color: #ccff00;
         }
 
-        }
+    }
+
     .single article .article-content p, p, .post-excerpt {
         font-family: Montserrat;
         line-height: 25px;
@@ -121,9 +123,9 @@
                                             <div class="title">About Exchange Fees</div>
                                             <p>
                                                 When you place an order at the market price that gets filled immediately, you are considered a taker and will pay a fee of 0.25%.
-                                               <br /> <br />When you place an order, which is not immediately matched by an existing order, that order is placed on the order book. If another customer places an order that matches yours, you are considered the maker and will pay a fee between 0.30% to .40%.
-                                               <br /> <br />When you place an order that gets partially matched immediately, you pay a taker fee for that portion.
-                                               <br /> <br />The remainder of the order is placed on the order book and, when matched, is considered a maker order.
+                                                <br /> <br />When you place an order, which is not immediately matched by an existing order, that order is placed on the order book. If another customer places an order that matches yours, you are considered the maker and will pay a fee between 0.30% to .40%.
+                                                <br /> <br />When you place an order that gets partially matched immediately, you pay a taker fee for that portion.
+                                                <br /> <br />The remainder of the order is placed on the order book and, when matched, is considered a maker order.
                                             </p>
                                         </div>
                                         <div class="vc_empty_space" style="height: 10px">
@@ -447,7 +449,18 @@
         });
 
     });</script>
-<script>$(document).ready(function () {
+<script>
+
+
+
+
+
+
+
+
+    $(document).ready(function () {
+
+
 
         $.get("https://bff.armoney.in/api/get-volume-discount-tiers", function (data) {
             $("#tradingdiscount tbody").find("tr").remove();
@@ -460,14 +473,43 @@
         });
 
     });</script>
-<script>$(document).ready(function () {
+<script>
 
-    $.get("https://bff.armoney.in/api/GetSettings", function (data) {
+    function removeTrailingZeros(inputNum)
+    { 
+        let inputNumInString = inputNum.toFixed(10);
+        let splittedByDot = inputNumInString.split('.'); 
+        let fractionalPart = '';
+        if (splittedByDot.length == 2) {
+            let getTill=0;
+            let i
+            for (i = splittedByDot[1].length - 1; i >= 0; i--) { 
+                if (splittedByDot[1][i] != "0")
+                    break;
+                getTill = i;
+            }
+            fractionalPart = splittedByDot[1].substring(0, getTill);
+        }
+        if (fractionalPart.length > 0) {
+            inputNum = splittedByDot[0] + '.' + fractionalPart;
+        }
+        else {
+            inputNum = splittedByDot[0];
+        }
+            
+        return inputNum;
+    }
+
+
+
+
+    $(document).ready(function () {
+
+        $.get("https://bff.armoney.in/api/GetSettings", function (data) {
             $("#tradingrul tbody").find("tr").remove();
-        $.each(data.data.trade_setting, function (index, item) {
+            $.each(data.data.trade_setting, function (index, item) {
+                var line = "<tr>  <td> <img src='../wp-content/icons/" + item.coinName + ".png' />   " + item.coinName + " / " + item.marketName + " </td> <td>" + removeTrailingZeros(item.minTickSize) + " " + item.marketName + "</td> <td>" + removeTrailingZeros(item.minOrderValue) + " " + item.marketName + " </td> <td>" + removeTrailingZeros(item.minTradeAmount) + " " + item.coinName + " </td> </tr> ";
 
-            var line = "<tr>  <td> <img src='../wp-content/icons/" + item.coinName + ".png' />   " + item.coinName + " / " + item.marketName + " </td> <td>" + item.minTickSize.toString() + " " + item.marketName + "</td> <td>" + item.minOrderValue.toFixed(8) + " " + item.marketName + " </td> <td>" + item.minTradeAmount.toFixed(8) + " " + item.coinName + " </td> </tr> ";
-            console.log('item.minTickSize.toString()', item.minTickSize.toFixed(33).toString()).trim;
                 $("#tradingrul tbody").append(line);
             });
         });
