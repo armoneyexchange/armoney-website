@@ -442,7 +442,7 @@
         $.get("https://bff.armoney.in/api/CurrencySettings", function (data) {
             $("#depositwithdrawfee tbody").find("tr").remove();
             $.each(data.data, function (index, item) {
-                var line = "<tr>  <td> <img src='../wp-content/icons/" + item.shortName + ".png' />   " + item.shortName + " ( " + item.fullName + " )</td> <td> Free </td> <td>" + item.withdrawalServiceCharge + " %</td> <td>" + item.confirmationCount + " </td> <td>" + item.minWithdrawalLimit + "  " + item.shortName + "</td> <td>" + item.maxWithdrawalLimit + "  " + item.shortName + "</td> </tr> ";
+                var line = "<tr>  <td> <img src='../wp-content/icons/" + item.shortName + ".png' />   " + item.shortName + " ( " + item.fullName + " )</td> <td> Free </td> <td>" + item.withdrawalServiceCharge + " </td> <td>" + item.confirmationCount + " </td> <td>" + item.minWithdrawalLimit + "  " + item.shortName + "</td> <td>" + item.maxWithdrawalLimit + "  " + item.shortName + "</td> </tr> ";
 
                 $("#depositwithdrawfee tbody").append(line);
             });
