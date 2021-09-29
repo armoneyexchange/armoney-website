@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  armoneywebcore:
+    image: ${DOCKER_REGISTRY-}armoneywebcore
+    build:
+      context: .
+      dockerfile: ArmoneyWebCore/Dockerfile
